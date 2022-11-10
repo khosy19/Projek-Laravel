@@ -13,14 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('wargas', function (Blueprint $table) {
-            $table->id();
-            $table->integer('nik');
-            $table->string('nama',100);
-            $table->enum('jk',['Laki-Laki','Perempuan']);
-            $table->text('alamat');
-            $table->binary('foto_ktp')->nullable;
-            $table->binary('foto_kk')->nullable;
+        Schema::create('kas', function (Blueprint $table) {
+            $table->bigInteger('id_kas',10);
+            $table->string('nama_iuran',100);
+            $table->tinyText('total_kas');
         });
     }
 
@@ -31,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('wargas');
+        Schema::dropIfExists('kas');
     }
 };

@@ -26,7 +26,7 @@
                   <a class="nav-link active" aria-current="page" href="/home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/datawarga">Data Warga</a>
+                    <a class="nav-link" href="/warga">Data Warga</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#">Logout</a>

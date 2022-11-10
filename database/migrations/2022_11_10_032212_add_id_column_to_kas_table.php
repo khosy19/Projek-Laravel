@@ -13,14 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('wargas', function (Blueprint $table) {
-            $table->id();
-            $table->integer('nik');
-            $table->string('nama',100);
-            $table->enum('jk',['Laki-Laki','Perempuan']);
-            $table->text('alamat');
-            $table->binary('foto_ktp')->nullable;
-            $table->binary('foto_kk')->nullable;
+        Schema::table('kas', function (Blueprint $table) {
+            $table->unsignedBigInteger('id')->required();
+            $table->foreign('id')->references('id')->on('wargas');
         });
     }
 
@@ -31,6 +26,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('wargas');
+        Schema::table('kas', function (Blueprint $table) {
+            $table->dropColumn('id');
+        });
     }
 };

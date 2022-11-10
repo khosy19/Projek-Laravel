@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\WargaController;
 
 
 Route::get('/home', function(){
@@ -10,9 +11,14 @@ Route::get('/home', function(){
         'datawarga' => ['Budi','samsul','rabi','samsul','rabi','samsul','rabi','samsul','rabi','samsul','rabi']
     ]);
 });
-Route::get('/datawarga',function(){
-    return view('datawarga');
-});
+
+Route::get('/warga',[WargaController::class,'index']);
+
+
+//memanggil tanpa controller tapi dari view
+// Route::get('/datawarga',function(){
+//     return view('datawarga');
+// });
 
 
 //belajar routes
